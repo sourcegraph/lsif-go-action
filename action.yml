@@ -5,6 +5,14 @@ branding:
   icon: code
   color: purple
 
+inputs:
+  verbose:
+    description: Set to true to log indexer progress
+    required: false
+    default: ''
+
 runs:
   using: docker
   image: Dockerfile
+  environment:
+    - VERBOSE=${{ input.verbose }}
