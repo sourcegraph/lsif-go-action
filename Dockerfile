@@ -1,16 +1,15 @@
-FROM golang:1.13.1-alpine3.10 as builder
+FROM golang:1.13.1-buster as builder
 
 # The commit at which to build lsif-go and lsif-gomod
 ENV INDEXER_COMMIT=31f713911725c7b0d3871251f53678f217162c3d
 ENV CLONE_URL="https://github.com/sourcegraph/lsif-go.git"
 
 WORKDIR /build
-RUN apk add --no-cache git=2.22.0-r0 && \
-    git clone "${CLONE_URL}" . && \
+RUN git clone "${CLONE_URL}" . && \
     go install ./cmd/lsif-go && \
     go install ./cmd/lsif-gomod
 
-FROM golang:1.13.1-alpine3.10
+FROM golang:1.13.1-buster
 
 LABEL version="0.1.0"
 LABEL repository="http://github.com/sourcegraph/lsif-go-action"
