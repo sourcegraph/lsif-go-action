@@ -15,4 +15,4 @@ runs:
   using: docker
   image: Dockerfile
   env:
-    - VERBOSE=${{ input.verbose }}
+    VERBOSE: ${{ input.verbose }}
