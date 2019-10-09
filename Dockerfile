@@ -6,7 +6,7 @@ ENV CLONE_URL="https://github.com/sourcegraph/lsif-go.git"
 
 WORKDIR /build
 RUN apk add --no-cache git=2.22.0-r0 && \
-    git clone "${CLONE_SOURCE}" . && \
+    git clone "${CLONE_URL}" . && \
     go install ./cmd/lsif-go && \
     go install ./cmd/lsif-gomod
 
