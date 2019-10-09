@@ -1,0 +1,10 @@
+name: Sourcegraph Go LSIF Indexer
+description: Generate LSIF data from Go source code
+author: Sourcegraph
+branding:
+  icon: code
+  color: purple
+
+runs:
+  using: docker
+  image: Dockerfile
