@@ -1,0 +1,23 @@
+name: Sourcegraph Go LSIF Indexer
+description: Generate LSIF data from Go source code
+author: Sourcegraph
+branding:
+  icon: code
+  color: purple
+
+inputs:
+  file:
+    description: The output filename.
+    required: false
+    default: data.lsif
+  verbose:
+    description: Set to true to log indexer progress
+    required: false
+    default: ''
+
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    OUT: ${{ inputs.file }}
+    VERBOSE: ${{ inputs.verbose }}
