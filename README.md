@@ -32,5 +32,5 @@ jobs:
         uses: sourcegraph/lsif-upload-action@0.1.0-alpha
         with:
           file: data.lsif
-          upload_token: abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijkl
+          access_token: ${{ secrets.lsif_access_token }}
 ```
