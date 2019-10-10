@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -z "$OUT" ]; 
+if [ -z "$OUT" ]; then
     echo '$OUT not supplied.'
     exit 1
 fi
