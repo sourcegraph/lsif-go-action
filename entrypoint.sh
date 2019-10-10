@@ -6,9 +6,9 @@ if [ -z "$OUT" ]; then
 fi
 
 if [ ! -z "$VERBOSE" ]; then
-    lsif-go --noContents --out temp.lsif -v --debug
+    lsif-go --projectRoot "${PROJECT_ROOT}" --noContents --out temp.lsif -v --debug
     lsif-gomod --in temp.lsif --out "$OUT"
     rm temp.lsif
 else
-    lsif-go --noContents --stdout | lsif-gomod --stdin --out "$OUT"
+    lsif-go --projectRoot "${PROJECT_ROOT}" --noContents --stdout | lsif-gomod --stdin --out "$OUT"
 fi
