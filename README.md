@@ -23,14 +23,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Generate LSIF Data
-        uses: sourcegraph/lsif-go-action@0.1.0-alpha
+      - name: Generate LSIF data
+        uses: sourcegraph/lsif-go-action@master
         with:
-          file: data.lsif
           verbose: 'true'
       - name: Upload LSIF data
-        uses: sourcegraph/lsif-upload-action@0.1.0-alpha
+        uses: sourcegraph/lsif-upload-action@master
+        continue-on-error: true
         with:
-          file: data.lsif
-          access_token: ${{ secrets.lsif_access_token }}
+          endpoint: https://sourcegraph.com
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
