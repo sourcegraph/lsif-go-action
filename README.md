@@ -1,6 +1,6 @@
 # Sourcegraph Go LSIF Indexer GitHub Action
 
-This action generate LSIF data from Go source code. See the [LSIF Go Indexer](https://github.com/sourcegraph/lsif-go) for more details. This will also run the `lsif-gomod` binary in order to output monikers for external dependencies.
+This action generate LSIF data from Go source code. See the [LSIF Go Indexer](https://github.com/sourcegraph/lsif-go) for more details.
 
 ## Usage
 

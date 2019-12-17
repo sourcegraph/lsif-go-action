@@ -1,14 +1,13 @@
 FROM golang:1.13.1-buster as builder
 
-# The commit at which to build lsif-go and lsif-gomod
-ENV INDEXER_COMMIT=31f713911725c7b0d3871251f53678f217162c3d
+# The commit at which to build lsif-go
+ENV INDEXER_COMMIT=4b2d6ae99065dbc91c401ec3ff1e62833dd0194f
 ENV CLONE_URL="https://github.com/sourcegraph/lsif-go.git"
 
 WORKDIR /build
 RUN git clone "${CLONE_URL}" . && \
     git checkout -q "${INDEXER_COMMIT}" && \
-    go install ./cmd/lsif-go && \
-    go install ./cmd/lsif-gomod
+    go install ./cmd/lsif-go
 
 FROM golang:1.13.1-buster
 
@@ -23,6 +22,5 @@ LABEL "com.github.actions.icon"="code"
 LABEL "com.github.actions.color"="purple"
 
 COPY --from=builder /go/bin/lsif-go /go/bin/lsif-go
-COPY --from=builder /go/bin/lsif-gomod /go/bin/lsif-gomod
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
