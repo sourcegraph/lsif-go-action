@@ -1,10 +1,10 @@
 # Sourcegraph Go LSIF Indexer GitHub Action
 
-This action generate LSIF data from Go source code. See the [LSIF Go Indexer](https://github.com/sourcegraph/lsif-go) for more details.
+This action generate LSIF data from Go source code. See the [LSIF go indexer](https://github.com/sourcegraph/lsif-go) for more details.
 
 ## Usage
 
-The following input scan be set.
+The following inputs can be set.
 
 | name         | default   | description |
 | ------------ | --------- | ----------- |
