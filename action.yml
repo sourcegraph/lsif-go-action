@@ -7,7 +7,7 @@ branding:
 
 inputs:
   file:
-    description: The output filename.
+    description: The output filename (relative to the repository root).
     default: dump.lsif
   project_root: 
     description: The root of the project (where go.mod is located).

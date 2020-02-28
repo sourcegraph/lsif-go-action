@@ -5,4 +5,7 @@ if [ -z "$OUT" ]; then
     exit 1
 fi
 
-lsif-go --projectRoot "${PROJECT_ROOT}" --out "$OUT"
+ABS_OUT="$(cd "$(dirname "${OUT}")" && pwd)/$(basename "${OUT}")"
+cd "${PROJECT_ROOT}"
+lsif-go --out "$OUT"
+cd -
