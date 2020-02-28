@@ -1,11 +1,9 @@
 FROM golang:1.13.1-buster as builder
 
-# The commit at which to build lsif-go
 ENV INDEXER_COMMIT=7cc73d2ee50d000105e0d7f0a3447d1b93a682ac
-ENV CLONE_URL="https://github.com/sourcegraph/lsif-go.git"
 
 WORKDIR /build
-RUN git clone "${CLONE_URL}" . && \
+RUN git clone https://github.com/sourcegraph/lsif-go.git . && \
     git checkout -q "${INDEXER_COMMIT}" && \
     go install ./cmd/lsif-go
 
