@@ -8,9 +8,8 @@ The following inputs can be set.
 
 | name         | default   | description |
 | ------------ | --------- | ----------- |
-| file         | data.lsif | The output file. |
+| file         | dump.lsif | The output file. |
 | project_root | `.`       | The root of the project (where go.mod is located). |
-| verbose      | false     | Print indexer progress to stdout. |
 
 The following is a complete example that uses the [upload action](https://github.com/sourcegraph/lsif-upload-action) to upload the generated data to [sourcegraph.com](https://sourcegraph.com).
 
@@ -19,7 +18,7 @@ name: LSIF
 on:
   - push
 jobs:
-  build:
+  index:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
