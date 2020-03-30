@@ -1,6 +1,6 @@
 FROM golang:1.13.1-buster as builder
 
-ENV INDEXER_COMMIT=7cc73d2ee50d000105e0d7f0a3447d1b93a682ac
+ENV INDEXER_COMMIT=b5af0ba31ef406d9f691643f3126118935aa8633
 
 WORKDIR /build
 RUN git clone https://github.com/sourcegraph/lsif-go.git . && \
@@ -9,7 +9,7 @@ RUN git clone https://github.com/sourcegraph/lsif-go.git . && \
 
 FROM golang:1.13.1-buster
 
-LABEL version="0.1.0"
+LABEL version="0.2.0"
 LABEL repository="http://github.com/sourcegraph/lsif-go-action"
 LABEL homepage="http://github.com/sourcegraph/lsif-go-action"
 LABEL maintainer="Sourcegraph Support <support@sourcegraph.com>"
