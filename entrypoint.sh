@@ -1,11 +1,11 @@
 #!/bin/sh
 
-if [ -z "$OUT" ]; then
-    echo 'file not supplied.'
-    exit 1
-fi
+: ${OUT:?output file not specified}
+: ${PROJECT_ROOT:?project root not specified}
+: ${MODULE_ROOT:?module root not specified}
 
-ABS_OUT="$(cd "$(dirname "${OUT}")" && pwd)/$(basename "${OUT}")"
+OUTPUT_DIR="$(cd "$(dirname "$OUT")" && pwd)"
+ABS_OUT="${OUTPUT_DIR}/$(basename "$OUT")"
 cd "${PROJECT_ROOT}"
-lsif-go --out "$OUT"
+lsif-go --out "$ABS_OUT" --moduleRoot "$MODULE_ROOT"
 cd -
