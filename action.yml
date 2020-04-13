@@ -10,7 +10,10 @@ inputs:
     description: The output filename (relative to the repository root).
     default: dump.lsif
   project_root: 
-    description: The root of the project (where go.mod is located).
+    description: The root of the repository.
+    default: .
+  module_root:
+    description: The directory where go.mod is located (relative to the repository).
     default: .
 
 runs:
@@ -19,3 +22,4 @@ runs:
   env:
     OUT: ${{ inputs.file }}
     PROJECT_ROOT: ${{ inputs.project_root }}
+    MODULE_ROOT: ${{ inputs.module_root }}
