@@ -6,6 +6,9 @@ branding:
   color: purple
 
 inputs:
+  version:
+    description: Version of lsif-go to use.
+    required: true
   file:
     description: The output filename (relative to the repository root).
     default: dump.lsif
@@ -15,7 +18,7 @@ inputs:
 
 runs:
   using: docker
-  image: Dockerfile
-  env:
-    OUT: ${{ inputs.file }}
-    PROJECT_ROOT: ${{ inputs.project_root }}
+  image: sourcegraph/lsif-go:${{ inputs.version }}
+  args:
+    - --out=${{ inputs.file }}
+    - --repositoryRoot=${{ inputs.project_root }}
