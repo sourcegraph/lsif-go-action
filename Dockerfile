@@ -1,6 +1,6 @@
 FROM golang:1.13.1-buster as builder
 
-ENV INDEXER_COMMIT=a855a1fc35c1237bad29d3f73005f8a26b656145
+ENV INDEXER_COMMIT=f8617a7afda6b9730dba368c7449eee38ff68722 # v1.7.0
 
 WORKDIR /build
 RUN git clone https://github.com/sourcegraph/lsif-go.git . && \
