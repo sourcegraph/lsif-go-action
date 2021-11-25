@@ -10,7 +10,7 @@ RUN git clone https://github.com/sourcegraph/lsif-go.git . && \
 
 FROM golang:1.13.1-buster
 
-LABEL version="0.3.0"
+LABEL version="0.4.0"
 LABEL repository="http://github.com/sourcegraph/lsif-go-action"
 LABEL homepage="http://github.com/sourcegraph/lsif-go-action"
 LABEL maintainer="Sourcegraph Support <support@sourcegraph.com>"
