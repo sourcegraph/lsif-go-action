@@ -1,7 +1,7 @@
 on: [pull_request]
 
 jobs:
-  test_lsif_rust_action:
+  test_lsif_go_action:
     runs-on: ubuntu-latest
     name: Check that LSIF Go Action works as advertised.
     steps:
