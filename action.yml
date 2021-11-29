@@ -15,6 +15,9 @@ inputs:
   module_root:
     description: The directory where go.mod is located (relative to the repository).
     default: .
+  additional_args:
+    description: These arguments are passed directly to lsif-go.
+    default: ''
 
 runs:
   using: docker
@@ -23,3 +26,4 @@ runs:
     OUT: ${{ inputs.file }}
     PROJECT_ROOT: ${{ inputs.project_root }}
     MODULE_ROOT: ${{ inputs.module_root }}
+    ADDITIONAL_ARGS: ${{ intputs.additional_args }}
