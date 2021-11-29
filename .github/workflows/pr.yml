@@ -10,7 +10,6 @@ jobs:
         uses: ./
         with:
           project_root: ./test/
-          module_root: ./test/
       - name: Upload LSIF data
         uses: sourcegraph/lsif-upload-action@master
         with:
