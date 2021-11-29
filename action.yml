@@ -26,4 +26,4 @@ runs:
     OUT: ${{ inputs.file }}
     PROJECT_ROOT: ${{ inputs.project_root }}
     MODULE_ROOT: ${{ inputs.module_root }}
-    ADDITIONAL_ARGS: ${{ intputs.additional_args }}
+    ADDITIONAL_ARGS: ${{ inputs.additional_args }}
