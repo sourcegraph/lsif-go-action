@@ -1,16 +1,16 @@
 FROM golang:1.17.7-buster as builder
 
-# v1.7.7
-ENV INDEXER_COMMIT=f42ce45b677b9316ebe06a801a5206fc6863f7ff
+# v1.9.1
+ENV INDEXER_COMMIT=93dad0336e50d00afdd5f3461d1ff798d3940562
 
 WORKDIR /build
 RUN git clone https://github.com/sourcegraph/lsif-go.git . && \
     git checkout -q "${INDEXER_COMMIT}" && \
     go install ./cmd/lsif-go
 
-FROM golang:1.17.7-buster
+FROM golang:1.18.2-buster
 
-LABEL version="0.4.0"
+LABEL version="0.4.1"
 LABEL repository="http://github.com/sourcegraph/lsif-go-action"
 LABEL homepage="http://github.com/sourcegraph/lsif-go-action"
 LABEL maintainer="Sourcegraph Support <support@sourcegraph.com>"
